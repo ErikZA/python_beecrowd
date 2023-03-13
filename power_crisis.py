@@ -1,6 +1,3 @@
-import sys
-
-
 def josephus(n, k):
     index = 0
     v = list(range(1, n+1))

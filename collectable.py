@@ -12,7 +12,7 @@ def compare(a, b):
     l, i = 1, 0
     while b:
         q = a//b
-        print(q)
+        print(q, a, b, x, l, y, i)
         a, b = b, a % b
         x, l = l - q*x, x
         y, i = i - q*y, y
