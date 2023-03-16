@@ -2,19 +2,25 @@
 # há n pessoas em pé em um círculo e queremos eliminar a proxima pessoa, dando a volta no círculo no sentido horário,
 # até que reste apenas uma pessoa. O problema é encontrar a posição da última pessoa restante.
 
-# Logo a saida é 1 pois é o numero minimo de deslocamento necessario para encontrar a região 13.
+# O numero minimo de deslocamento necessario para encontrar a região 13 é 1
+# por que
 
 # Simula a queda de energia em um circulo de regioes
 # n: numero de regioes do circulo
 # k: numero de deslocamentos necessarios para pular uma regiao do circulo
 # retorna True se a regiao 13 for a ultima regiao a ser removida do circulo
 def josephus(n, k):
-    index = 0  # inice da regiao a ser pulada
+    index = 0  # inice da regiao a ser eliminada na primeira interação
     v = list(range(1, n+1))  # lista de regioes do circulo
 
     while len(v) > 1:
-        del v[index]  # remove a regiao a ser pulada
-        # calcula a proxima regiao a ser pulada
+        del v[index]  # remove a regiao
+        # calcula a proxima regiao a ser eliminada
+        # ou seja, sera uma eliminação em sequencia ate que o array v tenha apenas um item
+        # caso o index seja menor que o tamanho do array v, o resto da divisao por len(v) é o novo index
+        # isso garante que o index não seja maior que o tamanho do array v
+        # e também que o proximo item a é o item inicial do array v
+        # ou ainda que o proximo item a ser removido seja o item seguinte ao item removido anteriormente
         index = (index + k - 1) % len(v)
 
         # a logica do laço é:
@@ -119,4 +125,4 @@ main()
 # na proxima interação o item 0 do array v será removido novamente
 # Aqui é quando o circulo de regioes se fecha novamente.
 
-# assim por diante ele segue interando ans até que o josephus retorne True
+# assim por diante ele segue interando ans(resposta) até que o josephus retorne True
