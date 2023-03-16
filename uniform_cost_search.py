@@ -51,6 +51,6 @@ def uniform_cost_search(initial_state):
 
 
 # Example usage
-board = ['A', 'V', 'A', ' ', 'V', 'A', 'V', 'A', 'V', 'A']
+board = [' ', 'V', 'A', 'A', 'V']
 solution = uniform_cost_search(board)
 print(solution)

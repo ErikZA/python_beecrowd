@@ -4,6 +4,7 @@ from collections import deque
 def bfs(estado_inicial):
     fila = deque([(estado_inicial, 0)])
     visitados = []
+    allStates = [[estado_inicial, 0]]
 
     while fila:
         estado_atual, profundidade = fila.popleft()
@@ -16,6 +17,7 @@ def bfs(estado_inicial):
 
             for proximo_estado in gerar_proximos_estados(estado_atual):
                 fila.append((proximo_estado, profundidade + 1))
+                allStates.append([proximo_estado, profundidade + 1])
 
     return estado_atual, profundidade
 
@@ -63,5 +65,5 @@ def objetivo_alcancado(estado):
 
 
 # Teste
-estado_inicial = [None, 'V', 'V', 'A', 'A', 'V', 'V', 'A', 'A', 'V']
+estado_inicial = [None, 'V', 'A', 'A', 'V']
 print(bfs(estado_inicial))
