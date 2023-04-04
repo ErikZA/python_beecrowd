@@ -121,7 +121,7 @@ main()
 # v = [2, 4, 6, 8, 10, 12, 14]
 # index = 7
 # remove o item 7 do array v e atualiza o index para o proximo item
-# index = (7 + 2 - 1) % 7 = 0
+# index = (7 + 2 - 1) % 7 = 1
 # na proxima interação o item 0 do array v será removido novamente
 # Aqui é quando o circulo de regioes se fecha novamente.
 
